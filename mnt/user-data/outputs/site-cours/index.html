@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Espace Atelier — Le Décodage des Récits par le Tarot</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #gate {
+            position: fixed; inset: 0; background: #fff; z-index: 99999;
+            display: flex; align-items: center; justify-content: center; flex-direction: column;
+            gap: 20px; padding: 20px; text-align: center;
+        }
+        #gate input {
+            padding: 12px 16px; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem;
+            width: 260px; text-align: center;
+        }
+        #gate-error { color: #c0392b; font-size: 0.85rem; min-height: 1.2em; }
+        #app-content { display: none; }
+    </style>
+</head>
+<body>
+
+    <div id="gate">
+        <h1 style="font-size:1rem; letter-spacing:3px; text-transform:uppercase; font-weight:300;">Espace Atelier</h1>
+        <p style="font-family:serif; font-style:italic; color:#888; max-width:320px;">Cet espace est réservé aux personnes inscrites à un atelier. Saisis le mot de passe qui t'a été communiqué.</p>
+        <input type="password" id="gate-password" placeholder="Mot de passe">
+        <button class="btn-tirage" id="gate-submit" style="margin:0;">Entrer</button>
+        <div id="gate-error"></div>
+    </div>
+
+    <div id="app-content">
+    <header class="main-header" id="header-logo" style="display:none;">
+        <img src="./Assets/Atelier.png" alt="Home" class="main-logo" data-nav="accueil">
+    </header>
+
+    <main>
+        <section id="accueil" class="page active">
+            <nav class="top-nav-right">
+                <div class="nav-sub-item" data-nav="tirage">Tirage</div>
+                <div class="nav-sub-item" data-nav="quiz">Quiz</div>
+            </nav>
+            <div class="accueil-container">
+                <div class="main-visual-container">
+                    <img src="./Assets/Atelier.png" alt="Espace Atelier" class="img-hero">
+                </div>
+                <p style="font-family:serif; font-style:italic; font-size:1.1rem; color:#888; margin: -10px 0 30px 0; line-height:1.6;">
+                    Ton support de cours — les arcanes, la numérologie, et les outils pour t'entraîner.
+                </p>
+                <div class="menu-central">
+                    <div class="menu-item" data-nav="majeurs"><img src="./Assets/majeures.png" class="icon-only" alt="Majeures"></div>
+                    <div class="menu-item" data-nav="mineurs"><img src="./Assets/Mineures.png" class="icon-only" alt="Mineures"></div>
+                    <div class="menu-item" data-nav="numerologie"><img src="./Assets/Numerologie.png" class="icon-only" alt="Numérologie"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="numerologie" class="page">
+            <nav class="top-nav-right">
+                <div class="nav-sub-item" data-nav="accueil">Accueil</div>
+                <div class="nav-sub-item" data-nav="majeurs">Majeures</div>
+                <div class="nav-sub-item" data-nav="mineurs">Mineures</div>
+            </nav>
+            <div class="tarot-layout">
+                <h1 class="page-title">La Structure des Nombres</h1>
+                <p style="text-align:center; max-width:600px; margin: -30px auto 50px auto; color:#666; font-family:serif; font-size:1.1rem;">
+                    Dans la matrice du Tarot, le nombre est un niveau d'évolution, une étape incontournable du récit. Cliquez sur un nombre pour décoder sa symbolique structurelle et ses maîtres nombres vibratoires.
+                </p>
+                
+                <h2 class="suite-title">Les Cycles de 1 à 10</h2>
+                <div id="grid-numerologie-base" class="num-symbols-grid"></div>
+
+                <h2 class="suite-title">Les Maîtres Nombres</h2>
+                <div id="grid-numerologie-maitres" class="num-symbols-grid master-grid"></div>
+            </div>
+        </section>
+
+        <section id="majeurs" class="page">
+            <nav class="top-nav-right">
+                <div class="nav-sub-item" data-nav="accueil">Accueil</div>
+                <div class="nav-sub-item" data-nav="mineurs">Mineures</div>
+                <div class="nav-sub-item" data-nav="numerologie">Numérologie</div>
+            </nav>
+            <div class="tarot-layout">
+                <h1 class="page-title">Le Parcours du Fou</h1>
+                <div class="fou-row"><div id="fou-box"></div></div>
+                <div id="grid-majeurs" class="cards-grid"></div>
+            </div>
+        </section>
+
+        <section id="mineurs" class="page">
+            <nav class="top-nav-right">
+                <div class="nav-sub-item" data-nav="accueil">Accueil</div>
+                <div class="nav-sub-item" data-nav="majeurs">Majeures</div>
+                <div class="nav-sub-item" data-nav="numerologie">Numérologie</div>
+            </nav>
+            <div class="tarot-layout">
+                <h1 class="page-title">Les Arcanes Mineures</h1>
+                <div id="mineurs-container"></div>
+            </div>
+        </section>
+
+        <section id="tirage" class="page">
+            <nav class="top-nav-right">
+                <div class="nav-sub-item" data-nav="accueil">Accueil</div>
+            </nav>
+            <div class="tarot-layout">
+                <h1 class="page-title">Tirage en 3 cartes</h1>
+                <div id="tirage-container"></div>
+                <div id="tirage-interpretation">Clique sur le bouton pour interroger les cartes...</div>
+                <button id="btn-tirage" class="btn-tirage">Mélanger et Tirer</button>
+            </div>
+        </section>
+
+        <section id="quiz" class="page">
+            <nav class="top-nav-right"><div class="nav-sub-item" data-nav="accueil">Accueil</div></nav>
+            <div class="tarot-layout">
+                <h1 class="page-title">Le Grand Quiz</h1>
+                <div id="quiz-container" class="quiz-box"></div>
+                <div id="quiz-result" style="display:none; text-align:center; margin: 30px 0;"></div>
+                <button id="btn-submit-quiz" class="btn-tirage">Vérifier</button>
+            </div>
+        </section>
+
+        <div id="scroll-top">↑</div>
+
+        <div id="card-modal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div class="modal-body">
+                    <div class="modal-image-container" id="modal-img-wrapper">
+                        <img id="modal-card-img" src="" alt="Visuel">
+                    </div>
+                    <div class="modal-text-container">
+                        <h2 id="modal-card-title">Nom</h2>
+                        <h3 id="modal-card-keyword">Mot-clé</h3>
+                        <p id="modal-card-description">Explication détaillée...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    </div>
+
+<script>
+/* --- PROTECTION PAR MOT DE PASSE ---
+   ⚠️ Ceci n'est PAS une vraie sécurité (le mot de passe est visible dans le code source),
+   c'est juste un filtre pour décourager le partage occasionnel du lien.
+   Pour protéger un cours payant sérieusement, une plateforme dédiée (Podia, Teachable, etc.) reste plus sûre. */
+const ATELIER_PASSWORD = "CHANGE-MOI"; // <-- remplace par ton mot de passe
+
+function checkGate() {
+    if (sessionStorage.getItem('atelier_ok') === '1') {
+        document.getElementById('gate').style.display = 'none';
+        document.getElementById('app-content').style.display = 'block';
+    }
+}
+checkGate();
+
+document.getElementById('gate-submit').addEventListener('click', () => {
+    const val = document.getElementById('gate-password').value;
+    if (val === ATELIER_PASSWORD) {
+        sessionStorage.setItem('atelier_ok', '1');
+        checkGate();
+    } else {
+        document.getElementById('gate-error').innerText = "Mot de passe incorrect.";
+    }
+});
+document.getElementById('gate-password').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') document.getElementById('gate-submit').click();
+});
+
+const ARCANES_MAJ = [
+    { nom: "Le Mat", img: "0fou.jpeg", mot: "l'Inconnu", sens: "Un saut dans l'inconnu, la liberté totale et l'élan spontané." },
+    { nom: "Le Bateleur", img: "1bateleur.jpeg", mot: "l'Initiative", sens: "Le début d'un cycle, tu as tous les outils pour réussir." },
+    { nom: "La Papesse", img: "2papesse.jpeg", mot: "l'Intuition", sens: "Le temps de la réflexion et de l'écoute de ton intuition." },
+    { nom: "L'Impératrice", img: "3imperatrice.jpeg", mot: "la Créativité", sens: "La créativité en action, l'abondance et la naissance d'idées." },
+    { nom: "L'Empereur", img: "4empereur.jpeg", mot: "la Structure", sens: "La structure, l'autorité et la concrétisation de tes projets." },
+    { nom: "Le Pape", img: "5pape.jpeg", mot: "la Sagesse", sens: "La transmission, le conseil et la recherche de sens." },
+    { nom: "L'Amoureux", img: "6amoureux.jpeg", mot: "le Choix", sens: "Un choix important à faire avec le cœur." },
+    { nom: "Le Chariot", img: "7chariot.jpeg", mot: "le Succès", sens: "Le succès, la maîtrise et la détermination vers ton but." },
+    { nom: "La Force", img: "8force.jpeg", mot: "la Maîtrise", sens: "Le courage et la maîtrise de tes instincts par la douceur." },
+    { nom: "L'Hermite", img: "9ermite.jpeg", mot: "la Prudence", sens: "Une période de retrait nécessaire pour trouver ta propre lumière." },
+    { nom: "La Roue", img: "10roue.jpeg", mot: "le Destin", sens: "Un tournant du destin, les cycles de la vie qui tournent." },
+    { nom: "La Justice", img: "11justice.jpeg", mot: "l'Équilibre", sens: "L'équilibre, la vérité et l'intégrité dans tes décisions." },
+    { nom: "Le Pendu", img: "12pendu.jpeg", mot: "le Lâcher-prise", sens: "Un temps d'arrêt, voir les choses sous un autre angle." },
+    { nom: "La Mort", img: "13mort.jpeg", mot: "la Transition", sens: "Une transformation profonde, la fin d'un cycle pour un renouveau structuré." },
+    { nom: "La Tempérance", img: "14temperance.jpeg", mot: "l'Harmonie", sens: "L'équilibre, la patience et la guérison par la modération." },
+    { nom: "Le Diable", img: "15diable.jpeg", mot: "l'Attachement", sens: "Tes passions, tes attachements ou tes peurs intérieures." },
+    { nom: "La Maison Dieu", img: "16tour.jpeg", mot: "le Changement", sens: "Un bouleversement soudain qui libère des structures fragiles." },
+    { nom: "L'Étoile", img: "17etoile.jpeg", mot: "l'Espoir", sens: "L'espoir, la sérénité et la protection bienveillante." },
+    { nom: "La Lune", img: "18lune.jpeg", mot: "l'Inconscient", sens: "Les rêves, les émotions floues et les mystères de l'inconscient." },
+    { nom: "Le Soleil", img: "19soleil.jpeg", mot: "la Clarté", sens: "La clarté, le bonheur partagé et le rayonnement personnel." },
+    { nom: "Le Jugement", img: "20jugement.jpeg", mot: "l'Éveil", sens: "Une renaissance, un appel intérieur et une libération." },
+    { nom: "Le Monde", img: "21monde.jpeg", mot: "l'Accomplissement", sens: "L'accomplissement total, l'harmonie et l'ouverture au monde." }
+];
+
+const MINEURS_CONFIG = {
+    suites: ["epee", "coupe", "baton", "denier"], 
+    titres: ["Épées", "Coupes", "Bâtons", "Deniers"],
+    noms: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Valet", "Cavalier", "Reine", "Roi"],
+    mots: {
+        epee: ["Potentiel", "Choix", "Douleur", "Repos", "Conflit", "Passage", "Trahison", "Déni", "Angoisse", "Fin", "Apprentissage", "Mouvement", "Maîtrise", "Autorité"],
+        coupe: ["Étincelle", "Rencontre", "Fête", "Retrait", "Deuil", "Nostalgie", "Rêverie", "Départ", "Satisfaction", "Bonheur", "Apprentissage", "Mouvement", "Maîtrise", "Autorité"],
+        baton: ["Action", "Projet", "Élan", "Succès", "Concurrence", "Victoire", "Défense", "Vitesse", "Résilience", "Responsabilité", "Apprentissage", "Mouvement", "Maîtrise", "Autorité"],
+        denier: ["Graine", "Équilibre", "Reconnaissance", "Ancrage", "Perte", "Aide", "Investissement", "Savoir-faire", "Profit", "Transmission", "Apprentissage", "Mouvement", "Maîtrise", "Autorité"]
+    }
+};
+
+const NUMEROLOGIE_DATA = {
+    base: [
+        { num: "1", titre: "Le Pionnier", mot: "Indépendance & Création", desc: "Symbole d'indépendance, d'ambition, de leadership et de création. Il représente le commencement, l'élan initial et l'affirmation de soi dans son propre récit." },
+        { num: "2", titre: "Le Diplomate", mot: "Union & Sensibilité", desc: "Représente l'union, l'écoute, la sensibilité et le partenariat. Il symbolise la coopération et le lien à l'autre, mais peut indiquer une difficulté à gérer ses émotions." },
+        { num: "3", titre: "L'Artiste", mot: "Communication & Expression", desc: "Associé à la communication, la créativité, l'expression et la joie de vivre. C'est le chiffre des relations sociales, de l'enthousiasme et du partage." },
+        { num: "4", titre: "Le Bâtisseur", mot: "Stabilité & Organisation", desc: "Incarne la stabilité, l'organisation, le travail et la persévérance. Il est le symbole de la construction concrète, méthodique et des bases solides." },
+        { num: "5", titre: "L'Aventurier", mot: "Liberté & Mouvement", desc: "Lié à la liberté, au changement, à l'exploration et aux voyages. C'est le chiffre de l'adaptabilité, du mouvement et de l'ouverture à l'inconnu." },
+        { num: "6", titre: "L'Affectif", mot: "Harmonie & Équilibre", desc: "Représente l'harmonie, la famille, l'amour et l'équilibre. Il incarne le besoin profond de sécurité affective, de beauté, de choix du cœur et de responsabilité." },
+        { num: "7", titre: "Le Sage", mot: "Analyse & Sagesse", desc: "Symbole de spiritualité, d'analyse, de réflexion et de sagesse. Il représente la maîtrise de l'esprit sur la matière, le focus net et la quête de vérité." },
+        { num: "8", titre: "L'Entrepreneur", mot: "Pouvoir & Réussite", desc: "Associé au pouvoir, à l'ambition matérielle, à la réussite concrète, à la justice immanente et à l'équilibre karmique entre donner et recevoir." },
+        { num: "9", titre: "L'Humanitaire", mot: "Altruisme & Achèvement", desc: "Représente l'altruisme, la compassion, l'achèvement et l'ouverture totale sur le monde. C'est le chiffre du bilan, de la transmission et de l'accomplissement spirituel." }
+    ],
+    maitres: [
+        { num: "11", titre: "La Force Inspirée", mot: "Intuition & Puissance", desc: "Le canal intuitif supérieur mis en action. Puissance magnétique et charisme. Capacité à capter les structures invisibles pour guider ou bouleverser la matière." },
+        { num: "22", titre: "Le Maître Bâtisseur", mot: "Vision Globale", desc: "L'ancrage du Bâtisseur démultiplié à l'échelle collective. Capacité à matérialiser des projets d'envergure, à bâtir des structures durables pour la communauté." },
+        { num: "33", titre: "L'Éveilleur", mot: "Guidance & Transmission", desc: "Le sommet de l'expression vibratoire. Guide, dévouement total et transmission des lois de l'harmonie. Alignement parfait entre le ressenti et l'action." }
+    ]
+};
+
+function createCardHTML(nom, imgPath, mot, description = "") {
+    const safeDesc = description.replace(/"/g, '&quot;');
+    return `<div class="card-wrapper" data-nom="${nom}" data-img="${imgPath}" data-mot="${mot}" data-desc="${safeDesc}">
+        <div class="card"><div class="card-inner">
+            <div class="card-front"><img src="${imgPath}"></div>
+            <div class="card-back"><img src="./Assets/texteaccueil.png" style="width:80%;"></div>
+        </div></div>
+        <div class="card-caption"><strong>${nom}</strong><br>${mot}</div>
+    </div>`;
+}
+
+function showPage(id) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    const targetPage = document.getElementById(id);
+    if (targetPage) targetPage.classList.add('active');
+    document.getElementById('header-logo').style.display = (id === 'accueil') ? 'none' : 'block';
+    window.scrollTo(0,0);
+}
+
+document.addEventListener('click', (e) => {
+    const nav = e.target.closest('[data-nav]');
+    if(nav) showPage(nav.dataset.nav);
+
+    const cardWrapper = e.target.closest('.card-wrapper');
+    if (cardWrapper && !e.target.closest('#tirage') && !e.target.closest('#quiz')) {
+        document.getElementById('modal-img-wrapper').style.display = 'block';
+        document.getElementById('modal-card-title').innerText = cardWrapper.dataset.nom;
+        document.getElementById('modal-card-keyword').innerText = cardWrapper.dataset.mot;
+        document.getElementById('modal-card-description').innerText = cardWrapper.dataset.desc || "Explication à venir...";
+        document.getElementById('modal-card-img').src = cardWrapper.dataset.img;
+        document.getElementById('card-modal').style.display = 'flex';
+    }
+
+    const numBlock = e.target.closest('.num-symbol-block');
+    if (numBlock) {
+        document.getElementById('modal-img-wrapper').style.display = 'none';
+        document.getElementById('modal-card-title').innerText = "Nombre " + numBlock.dataset.num + " : " + numBlock.dataset.title;
+        document.getElementById('modal-card-keyword').innerText = "Axe : " + numBlock.dataset.mot;
+        document.getElementById('modal-card-description').innerText = numBlock.dataset.desc;
+        document.getElementById('card-modal').style.display = 'flex';
+    }
+
+    if (e.target.classList.contains('close-modal') || e.target.id === 'card-modal') {
+        document.getElementById('card-modal').style.display = 'none';
+    }
+});
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        document.getElementById('card-modal').style.display = 'none';
+    }
+});
+
+window.onload = () => {
+    const gridMaj = document.getElementById('grid-majeurs');
+    if (gridMaj) {
+        document.getElementById('fou-box').innerHTML = createCardHTML(ARCANES_MAJ[0].nom, `./Assets/cardMaj/${ARCANES_MAJ[0].img}`, ARCANES_MAJ[0].mot, ARCANES_MAJ[0].sens);
+        gridMaj.innerHTML = ARCANES_MAJ.slice(1).map(c => createCardHTML(c.nom, `./Assets/cardMaj/${c.img}`, c.mot, c.sens)).join('');
+    }
+
+    const gridNumBase = document.getElementById('grid-numerologie-base');
+    if (gridNumBase) {
+        gridNumBase.innerHTML = NUMEROLOGIE_DATA.base.map(n => `
+            <div class="num-symbol-block" data-num="${n.num}" data-title="${n.titre}" data-mot="${n.mot}" data-desc="${n.desc.replace(/"/g, '&quot;')}">
+                <div class="num-digit">${n.num}</div>
+                <div class="num-label">${n.titre}</div>
+                <div class="num-sub-label">${n.mot}</div>
+            </div>
+        `).join('');
+    }
+
+    const gridNumMaitres = document.getElementById('grid-numerologie-maitres');
+    if (gridNumMaitres) {
+        gridNumMaitres.innerHTML = NUMEROLOGIE_DATA.maitres.map(n => `
+            <div class="num-symbol-block master-block" data-num="${n.num}" data-title="${n.titre}" data-mot="${n.mot}" data-desc="${n.desc.replace(/"/g, '&quot;')}">
+                <div class="num-digit">${n.num}</div>
+                <div class="num-label">${n.titre}</div>
+                <div class="num-sub-label">${n.mot}</div>
+            </div>
+        `).join('');
+    }
+
+    const mineursContainer = document.getElementById('mineurs-container');
+    if (mineursContainer) {
+        MINEURS_CONFIG.suites.forEach((suite, idx) => {
+            let suiteHTML = `<h2 class="suite-title">${MINEURS_CONFIG.titres[idx]}</h2>`;
+            suiteHTML += `<div class="numerology-header">`;
+            for (let n = 1; n <= 10; n++) { suiteHTML += `<div class="num-info">${n}</div>`; }
+            suiteHTML += `</div><div class="sub-grid-numbers">`;
+            MINEURS_CONFIG.noms.slice(0, 10).forEach((nom, i) => {
+                const motNum = MINEURS_CONFIG.mots[suite][i];
+                const descNum = `L'énergie du nombre ${nom} combinée au domaine des ${MINEURS_CONFIG.titres[idx]}. Axe d'analyse : ${motNum}.`;
+                suiteHTML += createCardHTML(`${nom} de ${suite}`, `./Assets/cardMin/${suite}/${nom}.jpg`, motNum, descNum);
+            });
+            suiteHTML += `</div><div class="sub-grid-honors">`;
+            MINEURS_CONFIG.noms.slice(10).forEach((nom, i) => {
+                const motHon = MINEURS_CONFIG.mots[suite][i+10];
+                const descHon = `La figure du ${nom} de ${suite} incarne une posture liée au domaine. Axe d'analyse : ${motHon}.`;
+                suiteHTML += createCardHTML(`${nom} de ${suite}`, `./Assets/cardMin/${suite}/${nom}.jpg`, motHon, descHon);
+            });
+            suiteHTML += `</div>`;
+            mineursContainer.innerHTML += suiteHTML;
+        });
+    }
+
+    const btnTirage = document.getElementById('btn-tirage');
+    if (btnTirage) {
+        btnTirage.onclick = () => {
+            const container = document.getElementById('tirage-container');
+            const interpretation = document.getElementById('tirage-interpretation');
+            const positions = ["Passé", "Présent", "Futur"];
+            let deck = ARCANES_MAJ.map(c => ({ nom: c.nom, img: `./Assets/cardMaj/${c.img}`, desc: c.sens }));
+            MINEURS_CONFIG.suites.forEach(s => {
+                MINEURS_CONFIG.noms.forEach((n, idx) => {
+                    deck.push({ nom: `${n} de ${s}`, img: `./Assets/cardMin/${s}/${n}.jpg`, desc: `Énergie liée au domaine ${s}.` });
+                });
+            });
+            const pioche = deck.sort(() => 0.5 - Math.random()).slice(0, 3);
+            container.innerHTML = pioche.map((carte, i) => `
+                <div class="card-wrapper">
+                    <div class="card flipped"><div class="card-inner">
+                        <div class="card-front"><img src="${carte.img}"></div>
+                        <div class="card-back"><img src="./Assets/texteaccueil.png" style="width:80%;"></div>
+                    </div></div>
+                    <div class="card-caption"><strong>${positions[i]}</strong><br>${carte.nom}</div>
+                </div>`).join('');
+            interpretation.innerHTML = `<div class="interpretation-grid">` + 
+                pioche.map((carte, i) => `<div class="interpretation-item"><p><strong>${positions[i]}</strong></p><p>${carte.desc}</p></div>`).join('') + `</div>`;
+        };
+    }
+};
+</script>
+</body>
+</html>

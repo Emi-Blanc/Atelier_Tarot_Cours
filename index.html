@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Le Décodage des Récits par le Tarot — séances et ateliers de lecture de soi par le tarot, l'astrologie et les typologies. Approche analytique et non divinatoire, à Bruxelles.">
+    <title>Le Décodage des Récits par le Tarot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="main-header" id="header-logo" style="display:none;">
+        <img src="./Assets/Atelier.png" alt="Home" class="main-logo" data-nav="accueil">
+    </header>
+
+    <main>
+        <section id="accueil" class="page active">
+            <nav class="top-nav-right">
+                <div class="nav-sub-item" data-nav="tirage">Tirage</div>
+                <div class="nav-sub-item" data-nav="propos">À Propos</div>
+                <div class="nav-sub-item" data-nav="contact">Contact</div>
+            </nav>
+            <div class="accueil-container">
+                <div class="main-visual-container">
+                    <img src="./Assets/Atelier.png" alt="Les Ateliers du Tarot" class="img-hero">
+                </div>
+                <p style="font-family:serif; font-style:italic; font-size:1.1rem; color:#888; margin: -10px 0 30px 0; line-height:1.6;">
+                    Un outil de lecture de soi — par le tarot, l'astrologie et les typologies.
+                </p>
+                <div class="menu-central">
+                    <div class="menu-item" data-nav="histoire"><img src="./Assets/histoire.png" class="icon-only" alt="Histoire"></div>
+                    <div class="menu-item" data-nav="comparatif"><img src="./Assets/differents.png" class="icon-only" alt="Différences"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="histoire" class="page">
+            <nav class="top-nav-right">
+                <div class="nav-sub-item" data-nav="accueil">Accueil</div>
+                <div class="nav-sub-item" data-nav="comparatif">Les différents Tarots</div>
+            </nav>
+            <div class="tarot-layout">
+                <h1 class="page-title">Histoire & Évolution du Tarot</h1>
+                <p style="text-align:center; font-family:serif; font-style:italic; font-size:1.15rem; color:#666; max-width:650px; margin: -30px auto 50px auto; line-height:1.7;">
+                    Comprendre l'évolution des cartes pour en saisir la structure contemporaine.
+                </p>
+
+                <div style="max-width:800px; margin: 0 auto; display:flex; flex-direction:column; gap:40px; padding-bottom: 50px;">
+                    <div style="border-left:3px solid #000; padding-left:20px;">
+                        <h3 style="text-transform:uppercase; letter-spacing:2px; font-size:1.1rem; margin-bottom:10px;">1. Les Origines Ludiques (XVe siècle)</h3>
+                        <p style="color:#444; font-size:0.95rem;">Né dans les cours du nord de l'Italie sous le nom de <em>Tarocchi</em>, le Tarot est à l'origine un jeu de société aristocratique. Les célèbres jeux Visconti-Sforza ne servaient pas à lire l'avenir, mais à illustrer des concepts philosophiques, mythologiques et politiques de la Renaissance.</p>
+                    </div>
+
+                    <div style="border-left:3px solid #000; padding-left:20px;">
+                        <h3 style="text-transform:uppercase; letter-spacing:2px; font-size:1.1rem; margin-bottom:10px;">2. La Standardisation de Marseille (XVIIe - XVIIIe siècle)</h3>
+                        <p style="color:#444; font-size:0.95rem;">Avec la gravure sur bois, les cartes se popularisent et se fixent. Les maîtres cartiers de Marseille stabilisent une iconographie et une palette de couleurs précises. C'est cette géométrie et cette logique visuelle brute qui forment la structure symbolique que nous étudions aujourd'hui.</p>
+                    </div>
+
+                    <div style="border-left:3px solid #000; padding-left:20px;">
+                        <h3 style="text-transform:uppercase; letter-spacing:2px; font-size:1.1rem; margin-bottom:10px;">3. Le Tournant Analytique & Projectif (XXe siècle)</h3>
+                        <p style="color:#444; font-size:0.95rem;">Grâce notamment aux concepts de la psychologie analytique de Carl Gustav Jung sur les archétypes et l'inconscient collectif, le Tarot quitte définitivement la seule sphère divinatoire pour s'affirmer comme un puissant miroir psychologique, un support de projection et un cadre de focalisation pour l'esprit.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="comparatif" class="page">
+            <nav class="top-nav-right">
+                <div class="nav-sub-item" data-nav="accueil">Accueil</div>
+                <div class="nav-sub-item" data-nav="histoire">Histoire</div>
+
+            </nav>
+            <div class="tarot-layout">
+                <h1 class="page-title">Les Grands Courants du Tarot</h1>
+                <p style="text-align:center; font-family:serif; font-style:italic; font-size:1.15rem; color:#666; max-width:600px; margin: -30px auto 50px auto; line-height:1.7;">
+                    Chaque système possède sa propre architecture visuelle et philosophique. Tour d'horizon des trois structures majeures.
+                </p>
+
+                <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:25px; max-width:960px; margin:0 auto 50px auto;">
+                    <div style="border:1px solid #eee; border-radius:4px; padding:24px; display:flex; flex-direction:column;">
+                        <div style="font-size:1.1rem; letter-spacing:2px; text-transform:uppercase; margin-bottom:12px; border-bottom:1px solid #000; padding-bottom:8px;">Le Marseille</div>
+                        <p style="font-family:serif; font-size:0.95rem; line-height:1.6; color:#555; flex:1;">
+                            <strong>Le règne de la géométrie et du symbole brut.</strong> Les arcanes mineures y sont purement abstraites et répétitives (géométriques), ce qui demande de s'appuyer fortement sur la numérologie et la logique visuelle des couleurs pour décoder le message. Très ancré et conceptuel.
+                        </p>
+                    </div>
+
+                    <div style="border:1px solid #eee; border-radius:4px; padding:24px; display:flex; flex-direction:column;">
+                        <div style="font-size:1.1rem; letter-spacing:2px; text-transform:uppercase; margin-bottom:12px; border-bottom:1px solid #000; padding-bottom:8px;">Le Rider-Waite</div>
+                        <p style="font-family:serif; font-size:0.95rem; line-height:1.6; color:#555; flex:1;">
+                            <strong>La révolution narrative par l'image.</strong> Créé en 1909 par Pamela Colman Smith et Arthur E. Waite, il illustre chaque arcane mineure par une scène de vie explicite. La Force et la Justice inversent leurs places (8 et 11). C'est le système le plus intuitif pour la projection immédiate et le récit de soi.
+                        </p>
+                    </div>
+
+                    <div style="border:1px solid #eee; border-radius:4px; padding:24px; display:flex; flex-direction:column;">
+                        <div style="font-size:1.1rem; letter-spacing:2px; text-transform:uppercase; margin-bottom:12px; border-bottom:1px solid #000; padding-bottom:8px;">Le Thoth (Crowley)</div>
+                        <p style="font-family:serif; font-size:0.95rem; line-height:1.6; color:#555; flex:1;">
+                            <strong>L'architecture ésotérique et astrologique.</strong> Peint par Frieda Harris, ce jeu pousse les correspondances astrologiques, cabalistiques et mythologiques à leur paroxysme. Les visuels sont géométriques, surréalistes et intensément dynamiques. Un système d'une immense complexité structurelle.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="seances" class="page">
+            <nav class="top-nav-right">
+                <div class="nav-sub-item" data-nav="accueil">Accueil</div>
+                <div class="nav-sub-item" data-nav="contact">Réserver</div>
+            </nav>
+            <div class="tarot-layout">
+                <h1 class="page-title">Séances</h1>
+                <p style="text-align:center; font-family:serif; font-style:italic; font-size:1.15rem; color:#666; max-width:560px; margin: -30px auto 50px auto; line-height:1.7;">
+                    Je ne prédis pas l'avenir. Je t'aide à mettre des mots sur ce que tu vis déjà.
+                </p>
+
+                <div style="display:flex; justify-content:center; gap:30px; margin-bottom:40px; flex-wrap:wrap;">
+                    <div style="text-align:center;">
+                        <div style="font-size:9px; letter-spacing:2px; text-transform:uppercase; font-weight:bold;">Tarot</div>
+                        <div style="font-size:0.8rem; color:#888; font-family:serif; font-style:italic;">Cycles &amp; phases de vie</div>
+                    </div>
+                    <div style="color:#ccc; font-size:1.2rem; align-self:center;">·</div>
+                    <div style="text-align:center;">
+                        <div style="font-size:9px; letter-spacing:2px; text-transform:uppercase; font-weight:bold;">Astrologie</div>
+                        <div style="font-size:0.8rem; color:#888; font-family:serif; font-style:italic;">Structure profonde</div>
+                    </div>
+                    <div style="color:#ccc; font-size:1.2rem; align-self:center;">·</div>
+                    <div style="text-align:center;">
+                        <div style="font-size:9px; letter-spacing:2px; text-transform:uppercase; font-weight:bold;">Typologies</div>
+                        <div style="font-size:0.8rem; color:#888; font-family:serif; font-style:italic;">Ennéagramme &amp; profils</div>
+                    </div>
+                </div>
+
+                <hr style="border:none; border-top:1px solid #eee; margin-bottom:50px;">
+
+                <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px; max-width:900px; margin:0 auto 50px auto;">
+                    <div style="border:1px solid #eee; border-radius:4px; padding:28px 24px; display:flex; flex-direction:column;">
+                        <div style="font-size:9px; letter-spacing:3px; text-transform:uppercase; color:#999; margin-bottom:16px;">Format 01</div>
+                        <div style="font-size:1rem; letter-spacing:3px; text-transform:uppercase; margin-bottom:6px;">Découverte</div>
+                        <div style="font-size:0.75rem; color:#999; letter-spacing:1px; text-transform:uppercase; margin-bottom:20px;">30 minutes</div>
+                        <div style="font-family:serif; font-size:1rem; line-height:1.65; color:#555; flex:1; margin-bottom:24px;">Une question précise, un tirage simple, une lecture analytique. Pour découvrir la démarche et voir si elle te correspond.</div>
+                        <div style="font-size:1.5rem; font-weight:300;">30 €</div>
+                        <div style="font-size:0.7rem; color:#999; letter-spacing:1px; text-transform:uppercase;">Séance unique</div>
+                    </div>
+
+                    <div style="border:1px solid #000; border-radius:4px; padding:28px 24px; display:flex; flex-direction:column;">
+                        <div style="display:inline-block; font-size:8px; letter-spacing:2px; text-transform:uppercase; border:1px solid #ccc; padding:3px 10px; border-radius:20px; margin-bottom:16px; color:#666;">Essentiel</div>
+                        <div style="font-size:9px; letter-spacing:3px; text-transform:uppercase; color:#999; margin-bottom:16px;">Format 02</div>
+                        <div style="font-size:1rem; letter-spacing:3px; text-transform:uppercase; margin-bottom:6px;">Lecture de profil</div>
+                        <div style="font-size:0.75rem; color:#999; letter-spacing:1px; text-transform:uppercase; margin-bottom:20px;">75 minutes</div>
+                        <div style="font-family:serif; font-size:1rem; line-height:1.65; color:#555; flex:1; margin-bottom:24px;">Croisement des trois systèmes — thème astral, ennéagramme, tirage tarot. Tu repars avec une image claire de là où tu en es et de ce qui se dégage comme ressource.</div>
+                        <div style="font-size:1.5rem; font-weight:300;">80 €</div>
+                        <div style="font-size:0.7rem; color:#999; letter-spacing:1px; text-transform:uppercase;">Séance unique</div>
+                    </div>
+
+                    <div style="border:1px solid #eee; border-radius:4px; padding:28px 24px; display:flex; flex-direction:column;">
+                        <div style="font-size:9px; letter-spacing:3px; text-transform:uppercase; color:#999; margin-bottom:16px;">Format 03</div>
+                        <div style="font-size:1rem; letter-spacing:3px; text-transform:uppercase; margin-bottom:6px;">Parcours</div>
+                        <div style="font-size:0.75rem; color:#999; letter-spacing:1px; text-transform:uppercase; margin-bottom:20px;">3 séances espacées</div>
+                        <div style="font-family:serif; font-size:1rem; line-height:1.65; color:#555; flex:1; margin-bottom:24px;">Séance 1 — qui tu es structurellement. Séance 2 — là où tu en es maintenant. Séance 3 — ce qui se dégage comme direction naturelle.</div>
+                        <div style="font-size:1.5rem; font-weight:300;">200 €</div>
+                        <div style="font-size:0.7rem; color:#999; letter-spacing:1px; text-transform:uppercase;">3 × 60 min environ</div>
+                    </div>
+                </div>
+
+                <div style="max-width:580px; margin:0 auto 50px auto; border-left:4px solid #000; padding-left:20px;">
+                    <p style="font-family:serif; font-style:italic; font-size:1.2rem; line-height:1.7; color:#333;">
+                        "Je n'oriente pas ta vie. Je t'aide à trouver le mot qui débloque — celui que tu avais déjà en toi mais qui manquait de forme."
+                    </p>
+                </div>
+
+                <div style="text-align:center;">
+                    <button class="btn-tirage" data-nav="contact">Réserver une séance</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="propos" class="page">
+            <nav class="top-nav-right">
+                <div class="nav-sub-item" data-nav="accueil">Accueil</div>
+            </nav>
+            
+            <div class="tarot-layout">
+                <h1 class="page-title">Ma Démarche</h1>
+                <div class="bio-container">
+                    <div class="manifeste-box">
+                        <p class="quote">"Le Tarot n'est pas une réponse préfabriquée, c'est un langage codé. Je vous aide à en déchiffrer la structure pour transformer vos récits en actions concrètes."</p>
+                    </div>
+
+                    <div class="bio-text">
+                        <p>Bienvenue dans mon espace. Je m'appelle Emilie. Mon parcours a toujours été guidé par une double quête : lever le voile sur ce qui semble mystérieux et trouver la structure cachée derrière le chaos.</p>
+                        <p>Quand j'ai découvert le Tarot il y a quelques années, c'est d'abord l'intrigue des images qui m'a attirée. En y plongeant, j'ai réalisé qu'il s'agissait d'un outil d'une clarté redoutable. Loin d'une voyance floue ou de prédictions passives, le Tarot est pour moi l'outil de focalisation ultime. Il permet de faire un focus sur des situations précises, d'éclairer les grandes étapes de l'existence et de poser des mots justes sur ce que l'on traverse au quotidien.</p>
+                        <p>J'ai appris le Tarot d'une manière méthodique, vivante et structurée, ce qui m'a permis de mettre de la méthodologie dans mon propre récit et de me réapproprier les étapes de ma vie. C'est cette clarté que je veux vous transmettre aujourd'hui : poser un cadre pour que le sens puisse enfin s'exprimer.</p>
+                        <p>Dans mes ateliers, la structure logique des nombres et des arcanes sert de repère rassurant. Je vous transmets les clés de ce système pour que vous puissiez faire pleinement confiance à l'intuition unique qui surgit lors d'un tirage — cette connexion intime avec les images du Tarot et votre propre vécu, permettant de lier instantanément les cartes à votre réalité.</p>
+                        <p><strong>Ce que je vous propose :</strong><br>
+                        Des ateliers pratiques en petit comité (maximum 6 personnes). Un espace d'apprentissage pour manipuler l'outil en toute autonomie. Ensemble, nous ferons le focus sur vos étapes de vie, nous accueillerons les liens profonds que les cartes réveillent par rapport à votre vécu, et nous poserons un cadre solide pour que vous construisiez votre propre récit.</p>
+                    </div>
+
+                    <div class="bio-footer">
+                        <p><em>Prête à mêler logique et expérience pour redonner de la clarté à votre histoire ? Rejoignez-moi pour le prochain atelier de septembre.</em></p>
+                        <button class="btn-tirage" data-nav="contact" style="margin-top: 20px;">Réserver ma place</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="page">
+            <nav class="top-nav-right">
+                <div class="nav-sub-item" data-nav="accueil">Accueil</div>
+            </nav>
+            <div class="tarot-layout">
+                <h1 class="page-title">Réserver une place ou poser une question</h1>
+                <div class="contact-container">
+                    <p class="contact-intro">Les ateliers de septembre sont limités à <strong>6 personnes</strong>. Remplissez ce formulaire pour bloquer votre place.</p>
+                    <!-- ⚠️ À FAIRE : remplace TON_ID_FORMSPREE par ton vrai ID Formspree (créer un compte gratuit sur formspree.io, créer un formulaire, copier l'ID fourni dans l'URL d'action) -->
+                    <form action="https://formspree.io/f/TON_ID_FORMSPREE" method="POST" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Votre nom / prénom :</label>
+                            <input type="text" id="name" name="name" required placeholder="Ex: Marie Durant">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Votre adresse e-mail :</label>
+                            <input type="email" id="email" name="_replyto" required placeholder="Ex: marie@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="object">Votre demande :</label>
+                            <select id="object" name="object" required>
+                                <option value="seance-decouverte">Séance Découverte — 30 min / 30 €</option>
+                                <option value="seance-profil">Lecture de profil — 75 min / 80 €</option>
+                                <option value="seance-parcours">Parcours 3 séances — 200 €</option>
+                                <option value="reservation">Atelier — réserver ma place</option>
+                                <option value="question">Une question</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Votre message :</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <input type="text" name="_gotcha" style="display:none">
+                        <button type="submit" class="btn-tirage">Envoyer ma demande</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="tirage" class="page">
+            <nav class="top-nav-right">
+                <div class="nav-sub-item" data-nav="accueil">Accueil</div>
+            </nav>
+            <div class="tarot-layout">
+                <h1 class="page-title">Tirage en 3 cartes</h1>
+                <div id="tirage-container"></div>
+                <div id="tirage-interpretation">Clique sur le bouton pour interroger les cartes...</div>
+                <button id="btn-tirage" class="btn-tirage">Mélanger et Tirer</button>
+            </div>
+        </section>
+
+        <div id="scroll-top">↑</div>
+
+        <div id="card-modal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div class="modal-body">
+                    <div class="modal-image-container" id="modal-img-wrapper">
+                        <img id="modal-card-img" src="" alt="Visuel">
+                    </div>
+                    <div class="modal-text-container">
+                        <h2 id="modal-card-title">Nom</h2>
+                        <h3 id="modal-card-keyword">Mot-clé</h3>
+                        <p id="modal-card-description">Explication détaillée...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+<script>
+const ARCANES_MAJ = [
+    { nom: "Le Mat", img: "0fou.jpeg", mot: "l'Inconnu", sens: "Un saut dans l'inconnu, la liberté totale et l'élan spontané." },
+    { nom: "Le Bateleur", img: "1bateleur.jpeg", mot: "l'Initiative", sens: "Le début d'un cycle, tu as tous les outils pour réussir." },
+    { nom: "La Papesse", img: "2papesse.jpeg", mot: "l'Intuition", sens: "Le temps de la réflexion et de l'écoute de ton intuition." },
+    { nom: "L'Impératrice", img: "3imperatrice.jpeg", mot: "la Créativité", sens: "La créativité en action, l'abondance et la naissance d'idées." },
+    { nom: "L'Empereur", img: "4empereur.jpeg", mot: "la Structure", sens: "La structure, l'autorité et la concrétisation de tes projets." },
+    { nom: "Le Pape", img: "5pape.jpeg", mot: "la Sagesse", sens: "La transmission, le conseil et la recherche de sens." },
+    { nom: "L'Amoureux", img: "6amoureux.jpeg", mot: "le Choix", sens: "Un choix important à faire avec le cœur." },
+    { nom: "Le Chariot", img: "7chariot.jpeg", mot: "le Succès", sens: "Le succès, la maîtrise et la détermination vers ton but." },
+    { nom: "La Force", img: "8force.jpeg", mot: "la Maîtrise", sens: "Le courage et la maîtrise de tes instincts par la douceur." },
+    { nom: "L'Hermite", img: "9ermite.jpeg", mot: "la Prudence", sens: "Une période de retrait nécessaire pour trouver ta propre lumière." },
+    { nom: "La Roue", img: "10roue.jpeg", mot: "le Destin", sens: "Un tournant du destin, les cycles de la vie qui tournent." },
+    { nom: "La Justice", img: "11justice.jpeg", mot: "l'Équilibre", sens: "L'équilibre, la vérité et l'intégrité dans tes décisions." },
+    { nom: "Le Pendu", img: "12pendu.jpeg", mot: "le Lâcher-prise", sens: "Un temps d'arrêt, voir les choses sous un autre angle." },
+    { nom: "La Mort", img: "13mort.jpeg", mot: "la Transition", sens: "Une transformation profonde, la fin d'un cycle pour un renouveau structuré." },
+    { nom: "La Tempérance", img: "14temperance.jpeg", mot: "l'Harmonie", sens: "L'équilibre, la patience et la guérison par la modération." },
+    { nom: "Le Diable", img: "15diable.jpeg", mot: "l'Attachement", sens: "Tes passions, tes attachements ou tes peurs intérieures." },
+    { nom: "La Maison Dieu", img: "16tour.jpeg", mot: "le Changement", sens: "Un bouleversement soudain qui libère des structures fragiles." },
+    { nom: "L'Étoile", img: "17etoile.jpeg", mot: "l'Espoir", sens: "L'espoir, la sérénité et la protection bienveillante." },
+    { nom: "La Lune", img: "18lune.jpeg", mot: "l'Inconscient", sens: "Les rêves, les émotions floues et les mystères de l'inconscient." },
+    { nom: "Le Soleil", img: "19soleil.jpeg", mot: "la Clarté", sens: "La clarté, le bonheur partagé et le rayonnement personnel." },
+    { nom: "Le Jugement", img: "20jugement.jpeg", mot: "l'Éveil", sens: "Une renaissance, un appel intérieur et une libération." },
+    { nom: "Le Monde", img: "21monde.jpeg", mot: "l'Accomplissement", sens: "L'accomplissement total, l'harmonie et l'ouverture au monde." }
+];
+
+const MINEURS_CONFIG = {
+    suites: ["epee", "coupe", "baton", "denier"], 
+    titres: ["Épées", "Coupes", "Bâtons", "Deniers"],
+    noms: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Valet", "Cavalier", "Reine", "Roi"],
+    mots: {
+        epee: ["Potentiel", "Choix", "Douleur", "Repos", "Conflit", "Passage", "Trahison", "Déni", "Angoisse", "Fin", "Apprentissage", "Mouvement", "Maîtrise", "Autorité"],
+        coupe: ["Étincelle", "Rencontre", "Fête", "Retrait", "Deuil", "Nostalgie", "Rêverie", "Départ", "Satisfaction", "Bonheur", "Apprentissage", "Mouvement", "Maîtrise", "Autorité"],
+        baton: ["Action", "Projet", "Élan", "Succès", "Concurrence", "Victoire", "Défense", "Vitesse", "Résilience", "Responsabilité", "Apprentissage", "Mouvement", "Maîtrise", "Autorité"],
+        denier: ["Graine", "Équilibre", "Reconnaissance", "Ancrage", "Perte", "Aide", "Investissement", "Savoir-faire", "Profit", "Transmission", "Apprentissage", "Mouvement", "Maîtrise", "Autorité"]
+    }
+};
+
+const NUMEROLOGIE_DATA = {
+    base: [
+        { num: "1", titre: "Le Pionnier", mot: "Indépendance & Création", desc: "Symbole d'indépendance, d'ambition, de leadership et de création. Il représente le commencement, l'élan initial et l'affirmation de soi dans son propre récit." },
+        { num: "2", titre: "Le Diplomate", mot: "Union & Sensibilité", desc: "Représente l'union, l'écoute, la sensibilité et le partenariat. Il symbolise la coopération et le lien à l'autre, mais peut indiquer une difficulté à gérer ses émotions." },
+        { num: "3", titre: "L'Artiste", mot: "Communication & Expression", desc: "Associé à la communication, la créativité, l'expression et la joie de vivre. C'est le chiffre des relations sociales, de l'enthousiasme et du partage." },
+        { num: "4", titre: "Le Bâtisseur", mot: "Stabilité & Organisation", desc: "Incarne la stabilité, l'organisation, le travail et la persévérance. Il est le symbole de la construction concrète, méthodique et des bases solides." },
+        { num: "5", titre: "L'Aventurier", mot: "Liberté & Mouvement", desc: "Lié à la liberté, au changement, à l'exploration et aux voyages. C'est le chiffre de l'adaptabilité, du mouvement et de l'ouverture à l'inconnu." },
+        { num: "6", titre: "L'Affectif", mot: "Harmonie & Équilibre", desc: "Représente l'harmonie, la famille, l'amour et l'équilibre. Il incarne le besoin profond de sécurité affective, de beauté, de choix du cœur et de responsabilité." },
+        { num: "7", titre: "Le Sage", mot: "Analyse & Sagesse", desc: "Symbole de spiritualité, d'analyse, de réflexion et de sagesse. Il représente la maîtrise de l'esprit sur la matière, le focus net et la quête de vérité." },
+        { num: "8", titre: "L'Entrepreneur", mot: "Pouvoir & Réussite", desc: "Associé au pouvoir, à l'ambition matérielle, à la réussite concrète, à la justice immanente et à l'équilibre karmique entre donner et recevoir." },
+        { num: "9", titre: "L'Humanitaire", mot: "Altruisme & Achèvement", desc: "Représente l'altruisme, la compassion, l'achèvement et l'ouverture totale sur le monde. C'est le chiffre du bilan, de la transmission et de l'accomplissement spirituel." }
+    ],
+    maitres: [
+        { num: "11", titre: "La Force Inspirée", mot: "Intuition & Puissance", desc: "Le canal intuitif supérieur mis en action. Puissance magnétique et charisme. Capacité à capter les structures invisibles pour guider ou bouleverser la matière." },
+        { num: "22", titre: "Le Maître Bâtisseur", mot: "Vision Globale", desc: "L'ancrage du Bâtisseur démultiplié à l'échelle collective. Capacité à matérialiser des projets d'envergure, à bâtir des structures durables pour la communauté." },
+        { num: "33", titre: "L'Éveilleur", mot: "Guidance & Transmission", desc: "Le sommet de l'expression vibratoire. Guide, dévouement total et transmission des lois de l'harmonie. Alignement parfait entre le ressenti et l'action." }
+    ]
+};
+
+function createCardHTML(nom, imgPath, mot, description = "") {
+    const safeDesc = description.replace(/"/g, '&quot;');
+    return `<div class="card-wrapper" data-nom="${nom}" data-img="${imgPath}" data-mot="${mot}" data-desc="${safeDesc}">
+        <div class="card"><div class="card-inner">
+            <div class="card-front"><img src="${imgPath}"></div>
+            <div class="card-back"><img src="./Assets/texteaccueil.png" style="width:80%;"></div>
+        </div></div>
+        <div class="card-caption"><strong>${nom}</strong><br>${mot}</div>
+    </div>`;
+}
+
+function showPage(id) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    const targetPage = document.getElementById(id);
+    if (targetPage) targetPage.classList.add('active');
+    document.getElementById('header-logo').style.display = (id === 'accueil') ? 'none' : 'block';
+    window.scrollTo(0,0);
+}
+
+document.addEventListener('click', (e) => {
+    const nav = e.target.closest('[data-nav]');
+    if(nav) showPage(nav.dataset.nav);
+
+    const cardWrapper = e.target.closest('.card-wrapper');
+    if (cardWrapper && !e.target.closest('#tirage') && !e.target.closest('#quiz')) {
+        document.getElementById('modal-img-wrapper').style.display = 'block';
+        document.getElementById('modal-card-title').innerText = cardWrapper.dataset.nom;
+        document.getElementById('modal-card-keyword').innerText = cardWrapper.dataset.mot;
+        document.getElementById('modal-card-description').innerText = cardWrapper.dataset.desc || "Explication à venir...";
+        document.getElementById('modal-card-img').src = cardWrapper.dataset.img;
+        document.getElementById('card-modal').style.display = 'flex';
+    }
+
+    const numBlock = e.target.closest('.num-symbol-block');
+    if (numBlock) {
+        document.getElementById('modal-img-wrapper').style.display = 'none';
+        document.getElementById('modal-card-title').innerText = "Nombre " + numBlock.dataset.num + " : " + numBlock.dataset.title;
+        document.getElementById('modal-card-keyword').innerText = "Axe : " + numBlock.dataset.mot;
+        document.getElementById('modal-card-description').innerText = numBlock.dataset.desc;
+        document.getElementById('card-modal').style.display = 'flex';
+    }
+
+    if (e.target.classList.contains('close-modal') || e.target.id === 'card-modal') {
+        document.getElementById('card-modal').style.display = 'none';
+    }
+});
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        document.getElementById('card-modal').style.display = 'none';
+    }
+});
+
+window.onload = () => {
+    const gridMaj = document.getElementById('grid-majeurs');
+    if (gridMaj) {
+        document.getElementById('fou-box').innerHTML = createCardHTML(ARCANES_MAJ[0].nom, `./Assets/cardMaj/${ARCANES_MAJ[0].img}`, ARCANES_MAJ[0].mot, ARCANES_MAJ[0].sens);
+        gridMaj.innerHTML = ARCANES_MAJ.slice(1).map(c => createCardHTML(c.nom, `./Assets/cardMaj/${c.img}`, c.mot, c.sens)).join('');
+    }
+
+    const gridNumBase = document.getElementById('grid-numerologie-base');
+    if (gridNumBase) {
+        gridNumBase.innerHTML = NUMEROLOGIE_DATA.base.map(n => `
+            <div class="num-symbol-block" data-num="${n.num}" data-title="${n.titre}" data-mot="${n.mot}" data-desc="${n.desc.replace(/"/g, '&quot;')}">
+                <div class="num-digit">${n.num}</div>
+                <div class="num-label">${n.titre}</div>
+                <div class="num-sub-label">${n.mot}</div>
+            </div>
+        `).join('');
+    }
+
+    const gridNumMaitres = document.getElementById('grid-numerologie-maitres');
+    if (gridNumMaitres) {
+        gridNumMaitres.innerHTML = NUMEROLOGIE_DATA.maitres.map(n => `
+            <div class="num-symbol-block master-block" data-num="${n.num}" data-title="${n.titre}" data-mot="${n.mot}" data-desc="${n.desc.replace(/"/g, '&quot;')}">
+                <div class="num-digit">${n.num}</div>
+                <div class="num-label">${n.titre}</div>
+                <div class="num-sub-label">${n.mot}</div>
+            </div>
+        `).join('');
+    }
+
+    const mineursContainer = document.getElementById('mineurs-container');
+    if (mineursContainer) {
+        MINEURS_CONFIG.suites.forEach((suite, idx) => {
+            let suiteHTML = `<h2 class="suite-title">${MINEURS_CONFIG.titres[idx]}</h2>`;
+            suiteHTML += `<div class="numerology-header">`;
+            for (let n = 1; n <= 10; n++) { suiteHTML += `<div class="num-info">${n}</div>`; }
+            suiteHTML += `</div><div class="sub-grid-numbers">`;
+            MINEURS_CONFIG.noms.slice(0, 10).forEach((nom, i) => {
+                const motNum = MINEURS_CONFIG.mots[suite][i];
+                const descNum = `L'énergie du nombre ${nom} combinée au domaine des ${MINEURS_CONFIG.titres[idx]}. Axe d'analyse : ${motNum}.`;
+                suiteHTML += createCardHTML(`${nom} de ${suite}`, `./Assets/cardMin/${suite}/${nom}.jpg`, motNum, descNum);
+            });
+            suiteHTML += `</div><div class="sub-grid-honors">`;
+            MINEURS_CONFIG.noms.slice(10).forEach((nom, i) => {
+                const motHon = MINEURS_CONFIG.mots[suite][i+10];
+                const descHon = `La figure du ${nom} de ${suite} incarne une posture liée au domaine. Axe d'analyse : ${motHon}.`;
+                suiteHTML += createCardHTML(`${nom} de ${suite}`, `./Assets/cardMin/${suite}/${nom}.jpg`, motHon, descHon);
+            });
+            suiteHTML += `</div>`;
+            mineursContainer.innerHTML += suiteHTML;
+        });
+    }
+
+    const btnTirage = document.getElementById('btn-tirage');
+    if (btnTirage) {
+        btnTirage.onclick = () => {
+            const container = document.getElementById('tirage-container');
+            const interpretation = document.getElementById('tirage-interpretation');
+            const positions = ["Passé", "Présent", "Futur"];
+            let deck = ARCANES_MAJ.map(c => ({ nom: c.nom, img: `./Assets/cardMaj/${c.img}`, desc: c.sens }));
+            MINEURS_CONFIG.suites.forEach(s => {
+                MINEURS_CONFIG.noms.forEach((n, idx) => {
+                    deck.push({ nom: `${n} de ${s}`, img: `./Assets/cardMin/${s}/${n}.jpg`, desc: `Énergie liée au domaine ${s}.` });
+                });
+            });
+            const pioche = deck.sort(() => 0.5 - Math.random()).slice(0, 3);
+            container.innerHTML = pioche.map((carte, i) => `
+                <div class="card-wrapper">
+                    <div class="card flipped"><div class="card-inner">
+                        <div class="card-front"><img src="${carte.img}"></div>
+                        <div class="card-back"><img src="./Assets/texteaccueil.png" style="width:80%;"></div>
+                    </div></div>
+                    <div class="card-caption"><strong>${positions[i]}</strong><br>${carte.nom}</div>
+                </div>`).join('');
+            interpretation.innerHTML = `<div class="interpretation-grid">` + 
+                pioche.map((carte, i) => `<div class="interpretation-item"><p><strong>${positions[i]}</strong></p><p>${carte.desc}</p></div>`).join('') + `</div>`;
+        };
+    }
+};
+</script>
+</body>
+</html>
