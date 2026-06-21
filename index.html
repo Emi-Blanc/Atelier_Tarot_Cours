@@ -3,11 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Le Décodage des Récits par le Tarot — séances et ateliers de lecture de soi par le tarot, l'astrologie et les typologies. Approche analytique et non divinatoire, à Bruxelles.">
-    <title>Le Décodage des Récits par le Tarot</title>
+    <meta name="robots" content="noindex, nofollow">
+    <title>Espace Atelier — Le Décodage des Récits par le Tarot</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        #gate {
+            position: fixed; inset: 0; background: #fff; z-index: 99999;
+            display: flex; align-items: center; justify-content: center; flex-direction: column;
+            gap: 20px; padding: 20px; text-align: center;
+        }
+        #gate input {
+            padding: 12px 16px; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem;
+            width: 260px; text-align: center;
+        }
+        #gate-error { color: #c0392b; font-size: 0.85rem; min-height: 1.2em; }
+        #app-content { display: none; }
+    </style>
 </head>
 <body>
+
+    <div id="gate">
+        <h1 style="font-size:1rem; letter-spacing:3px; text-transform:uppercase; font-weight:300;">Espace Atelier</h1>
+        <p style="font-family:serif; font-style:italic; color:#888; max-width:320px;">Cet espace est réservé aux personnes inscrites à un atelier. Saisis le mot de passe qui t'a été communiqué.</p>
+        <input type="password" id="gate-password" placeholder="Mot de passe">
+        <button class="btn-tirage" id="gate-submit" style="margin:0;">Entrer</button>
+        <div id="gate-error"></div>
+    </div>
+
+    <div id="app-content">
     <header class="main-header" id="header-logo" style="display:none;">
         <img src="./Assets/Atelier.png" alt="Home" class="main-logo" data-nav="accueil">
     </header>
@@ -16,227 +39,65 @@
         <section id="accueil" class="page active">
             <nav class="top-nav-right">
                 <div class="nav-sub-item" data-nav="tirage">Tirage</div>
-                <div class="nav-sub-item" data-nav="propos">À Propos</div>
-                <div class="nav-sub-item" data-nav="contact">Contact</div>
+                <div class="nav-sub-item" data-nav="quiz">Quiz</div>
             </nav>
             <div class="accueil-container">
                 <div class="main-visual-container">
-                    <img src="./Assets/Atelier.png" alt="Les Ateliers du Tarot" class="img-hero">
+                    <img src="./Assets/Atelier.png" alt="Espace Atelier" class="img-hero">
                 </div>
                 <p style="font-family:serif; font-style:italic; font-size:1.1rem; color:#888; margin: -10px 0 30px 0; line-height:1.6;">
-                    Un outil de lecture de soi — par le tarot, l'astrologie et les typologies.
+                    Ton support de cours — les arcanes, la numérologie, et les outils pour t'entraîner.
                 </p>
                 <div class="menu-central">
-                    <div class="menu-item" data-nav="histoire"><img src="./Assets/histoire.png" class="icon-only" alt="Histoire"></div>
-                    <div class="menu-item" data-nav="comparatif"><img src="./Assets/differents.png" class="icon-only" alt="Différences"></div>
+                    <div class="menu-item" data-nav="majeurs"><img src="./Assets/majeures.png" class="icon-only" alt="Majeures"></div>
+                    <div class="menu-item" data-nav="mineurs"><img src="./Assets/Mineures.png" class="icon-only" alt="Mineures"></div>
+                    <div class="menu-item" data-nav="numerologie"><img src="./Assets/Numerologie.png" class="icon-only" alt="Numérologie"></div>
                 </div>
             </div>
         </section>
 
-        <section id="histoire" class="page">
+        <section id="numerologie" class="page">
             <nav class="top-nav-right">
                 <div class="nav-sub-item" data-nav="accueil">Accueil</div>
-                <div class="nav-sub-item" data-nav="comparatif">Les différents Tarots</div>
+                <div class="nav-sub-item" data-nav="majeurs">Majeures</div>
+                <div class="nav-sub-item" data-nav="mineurs">Mineures</div>
             </nav>
             <div class="tarot-layout">
-                <h1 class="page-title">Histoire & Évolution du Tarot</h1>
-                <p style="text-align:center; font-family:serif; font-style:italic; font-size:1.15rem; color:#666; max-width:650px; margin: -30px auto 50px auto; line-height:1.7;">
-                    Comprendre l'évolution des cartes pour en saisir la structure contemporaine.
+                <h1 class="page-title">La Structure des Nombres</h1>
+                <p style="text-align:center; max-width:600px; margin: -30px auto 50px auto; color:#666; font-family:serif; font-size:1.1rem;">
+                    Dans la matrice du Tarot, le nombre est un niveau d'évolution, une étape incontournable du récit. Cliquez sur un nombre pour décoder sa symbolique structurelle et ses maîtres nombres vibratoires.
                 </p>
+                
+                <h2 class="suite-title">Les Cycles de 1 à 10</h2>
+                <div id="grid-numerologie-base" class="num-symbols-grid"></div>
 
-                <div style="max-width:800px; margin: 0 auto; display:flex; flex-direction:column; gap:40px; padding-bottom: 50px;">
-                    <div style="border-left:3px solid #000; padding-left:20px;">
-                        <h3 style="text-transform:uppercase; letter-spacing:2px; font-size:1.1rem; margin-bottom:10px;">1. Les Origines Ludiques (XVe siècle)</h3>
-                        <p style="color:#444; font-size:0.95rem;">Né dans les cours du nord de l'Italie sous le nom de <em>Tarocchi</em>, le Tarot est à l'origine un jeu de société aristocratique. Les célèbres jeux Visconti-Sforza ne servaient pas à lire l'avenir, mais à illustrer des concepts philosophiques, mythologiques et politiques de la Renaissance.</p>
-                    </div>
-
-                    <div style="border-left:3px solid #000; padding-left:20px;">
-                        <h3 style="text-transform:uppercase; letter-spacing:2px; font-size:1.1rem; margin-bottom:10px;">2. La Standardisation de Marseille (XVIIe - XVIIIe siècle)</h3>
-                        <p style="color:#444; font-size:0.95rem;">Avec la gravure sur bois, les cartes se popularisent et se fixent. Les maîtres cartiers de Marseille stabilisent une iconographie et une palette de couleurs précises. C'est cette géométrie et cette logique visuelle brute qui forment la structure symbolique que nous étudions aujourd'hui.</p>
-                    </div>
-
-                    <div style="border-left:3px solid #000; padding-left:20px;">
-                        <h3 style="text-transform:uppercase; letter-spacing:2px; font-size:1.1rem; margin-bottom:10px;">3. Le Tournant Analytique & Projectif (XXe siècle)</h3>
-                        <p style="color:#444; font-size:0.95rem;">Grâce notamment aux concepts de la psychologie analytique de Carl Gustav Jung sur les archétypes et l'inconscient collectif, le Tarot quitte définitivement la seule sphère divinatoire pour s'affirmer comme un puissant miroir psychologique, un support de projection et un cadre de focalisation pour l'esprit.</p>
-                    </div>
-                </div>
+                <h2 class="suite-title">Les Maîtres Nombres</h2>
+                <div id="grid-numerologie-maitres" class="num-symbols-grid master-grid"></div>
             </div>
         </section>
 
-        <section id="comparatif" class="page">
+        <section id="majeurs" class="page">
             <nav class="top-nav-right">
                 <div class="nav-sub-item" data-nav="accueil">Accueil</div>
-                <div class="nav-sub-item" data-nav="histoire">Histoire</div>
-
+                <div class="nav-sub-item" data-nav="mineurs">Mineures</div>
+                <div class="nav-sub-item" data-nav="numerologie">Numérologie</div>
             </nav>
             <div class="tarot-layout">
-                <h1 class="page-title">Les Grands Courants du Tarot</h1>
-                <p style="text-align:center; font-family:serif; font-style:italic; font-size:1.15rem; color:#666; max-width:600px; margin: -30px auto 50px auto; line-height:1.7;">
-                    Chaque système possède sa propre architecture visuelle et philosophique. Tour d'horizon des trois structures majeures.
-                </p>
-
-                <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:25px; max-width:960px; margin:0 auto 50px auto;">
-                    <div style="border:1px solid #eee; border-radius:4px; padding:24px; display:flex; flex-direction:column;">
-                        <div style="font-size:1.1rem; letter-spacing:2px; text-transform:uppercase; margin-bottom:12px; border-bottom:1px solid #000; padding-bottom:8px;">Le Marseille</div>
-                        <p style="font-family:serif; font-size:0.95rem; line-height:1.6; color:#555; flex:1;">
-                            <strong>Le règne de la géométrie et du symbole brut.</strong> Les arcanes mineures y sont purement abstraites et répétitives (géométriques), ce qui demande de s'appuyer fortement sur la numérologie et la logique visuelle des couleurs pour décoder le message. Très ancré et conceptuel.
-                        </p>
-                    </div>
-
-                    <div style="border:1px solid #eee; border-radius:4px; padding:24px; display:flex; flex-direction:column;">
-                        <div style="font-size:1.1rem; letter-spacing:2px; text-transform:uppercase; margin-bottom:12px; border-bottom:1px solid #000; padding-bottom:8px;">Le Rider-Waite</div>
-                        <p style="font-family:serif; font-size:0.95rem; line-height:1.6; color:#555; flex:1;">
-                            <strong>La révolution narrative par l'image.</strong> Créé en 1909 par Pamela Colman Smith et Arthur E. Waite, il illustre chaque arcane mineure par une scène de vie explicite. La Force et la Justice inversent leurs places (8 et 11). C'est le système le plus intuitif pour la projection immédiate et le récit de soi.
-                        </p>
-                    </div>
-
-                    <div style="border:1px solid #eee; border-radius:4px; padding:24px; display:flex; flex-direction:column;">
-                        <div style="font-size:1.1rem; letter-spacing:2px; text-transform:uppercase; margin-bottom:12px; border-bottom:1px solid #000; padding-bottom:8px;">Le Thoth (Crowley)</div>
-                        <p style="font-family:serif; font-size:0.95rem; line-height:1.6; color:#555; flex:1;">
-                            <strong>L'architecture ésotérique et astrologique.</strong> Peint par Frieda Harris, ce jeu pousse les correspondances astrologiques, cabalistiques et mythologiques à leur paroxysme. Les visuels sont géométriques, surréalistes et intensément dynamiques. Un système d'une immense complexité structurelle.
-                        </p>
-                    </div>
-                </div>
+                <h1 class="page-title">Le Parcours du Fou</h1>
+                <div class="fou-row"><div id="fou-box"></div></div>
+                <div id="grid-majeurs" class="cards-grid"></div>
             </div>
         </section>
 
-        <section id="seances" class="page">
+        <section id="mineurs" class="page">
             <nav class="top-nav-right">
                 <div class="nav-sub-item" data-nav="accueil">Accueil</div>
-                <div class="nav-sub-item" data-nav="contact">Réserver</div>
+                <div class="nav-sub-item" data-nav="majeurs">Majeures</div>
+                <div class="nav-sub-item" data-nav="numerologie">Numérologie</div>
             </nav>
             <div class="tarot-layout">
-                <h1 class="page-title">Séances</h1>
-                <p style="text-align:center; font-family:serif; font-style:italic; font-size:1.15rem; color:#666; max-width:560px; margin: -30px auto 50px auto; line-height:1.7;">
-                    Je ne prédis pas l'avenir. Je t'aide à mettre des mots sur ce que tu vis déjà.
-                </p>
-
-                <div style="display:flex; justify-content:center; gap:30px; margin-bottom:40px; flex-wrap:wrap;">
-                    <div style="text-align:center;">
-                        <div style="font-size:9px; letter-spacing:2px; text-transform:uppercase; font-weight:bold;">Tarot</div>
-                        <div style="font-size:0.8rem; color:#888; font-family:serif; font-style:italic;">Cycles &amp; phases de vie</div>
-                    </div>
-                    <div style="color:#ccc; font-size:1.2rem; align-self:center;">·</div>
-                    <div style="text-align:center;">
-                        <div style="font-size:9px; letter-spacing:2px; text-transform:uppercase; font-weight:bold;">Astrologie</div>
-                        <div style="font-size:0.8rem; color:#888; font-family:serif; font-style:italic;">Structure profonde</div>
-                    </div>
-                    <div style="color:#ccc; font-size:1.2rem; align-self:center;">·</div>
-                    <div style="text-align:center;">
-                        <div style="font-size:9px; letter-spacing:2px; text-transform:uppercase; font-weight:bold;">Typologies</div>
-                        <div style="font-size:0.8rem; color:#888; font-family:serif; font-style:italic;">Ennéagramme &amp; profils</div>
-                    </div>
-                </div>
-
-                <hr style="border:none; border-top:1px solid #eee; margin-bottom:50px;">
-
-                <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px; max-width:900px; margin:0 auto 50px auto;">
-                    <div style="border:1px solid #eee; border-radius:4px; padding:28px 24px; display:flex; flex-direction:column;">
-                        <div style="font-size:9px; letter-spacing:3px; text-transform:uppercase; color:#999; margin-bottom:16px;">Format 01</div>
-                        <div style="font-size:1rem; letter-spacing:3px; text-transform:uppercase; margin-bottom:6px;">Découverte</div>
-                        <div style="font-size:0.75rem; color:#999; letter-spacing:1px; text-transform:uppercase; margin-bottom:20px;">30 minutes</div>
-                        <div style="font-family:serif; font-size:1rem; line-height:1.65; color:#555; flex:1; margin-bottom:24px;">Une question précise, un tirage simple, une lecture analytique. Pour découvrir la démarche et voir si elle te correspond.</div>
-                        <div style="font-size:1.5rem; font-weight:300;">30 €</div>
-                        <div style="font-size:0.7rem; color:#999; letter-spacing:1px; text-transform:uppercase;">Séance unique</div>
-                    </div>
-
-                    <div style="border:1px solid #000; border-radius:4px; padding:28px 24px; display:flex; flex-direction:column;">
-                        <div style="display:inline-block; font-size:8px; letter-spacing:2px; text-transform:uppercase; border:1px solid #ccc; padding:3px 10px; border-radius:20px; margin-bottom:16px; color:#666;">Essentiel</div>
-                        <div style="font-size:9px; letter-spacing:3px; text-transform:uppercase; color:#999; margin-bottom:16px;">Format 02</div>
-                        <div style="font-size:1rem; letter-spacing:3px; text-transform:uppercase; margin-bottom:6px;">Lecture de profil</div>
-                        <div style="font-size:0.75rem; color:#999; letter-spacing:1px; text-transform:uppercase; margin-bottom:20px;">75 minutes</div>
-                        <div style="font-family:serif; font-size:1rem; line-height:1.65; color:#555; flex:1; margin-bottom:24px;">Croisement des trois systèmes — thème astral, ennéagramme, tirage tarot. Tu repars avec une image claire de là où tu en es et de ce qui se dégage comme ressource.</div>
-                        <div style="font-size:1.5rem; font-weight:300;">80 €</div>
-                        <div style="font-size:0.7rem; color:#999; letter-spacing:1px; text-transform:uppercase;">Séance unique</div>
-                    </div>
-
-                    <div style="border:1px solid #eee; border-radius:4px; padding:28px 24px; display:flex; flex-direction:column;">
-                        <div style="font-size:9px; letter-spacing:3px; text-transform:uppercase; color:#999; margin-bottom:16px;">Format 03</div>
-                        <div style="font-size:1rem; letter-spacing:3px; text-transform:uppercase; margin-bottom:6px;">Parcours</div>
-                        <div style="font-size:0.75rem; color:#999; letter-spacing:1px; text-transform:uppercase; margin-bottom:20px;">3 séances espacées</div>
-                        <div style="font-family:serif; font-size:1rem; line-height:1.65; color:#555; flex:1; margin-bottom:24px;">Séance 1 — qui tu es structurellement. Séance 2 — là où tu en es maintenant. Séance 3 — ce qui se dégage comme direction naturelle.</div>
-                        <div style="font-size:1.5rem; font-weight:300;">200 €</div>
-                        <div style="font-size:0.7rem; color:#999; letter-spacing:1px; text-transform:uppercase;">3 × 60 min environ</div>
-                    </div>
-                </div>
-
-                <div style="max-width:580px; margin:0 auto 50px auto; border-left:4px solid #000; padding-left:20px;">
-                    <p style="font-family:serif; font-style:italic; font-size:1.2rem; line-height:1.7; color:#333;">
-                        "Je n'oriente pas ta vie. Je t'aide à trouver le mot qui débloque — celui que tu avais déjà en toi mais qui manquait de forme."
-                    </p>
-                </div>
-
-                <div style="text-align:center;">
-                    <button class="btn-tirage" data-nav="contact">Réserver une séance</button>
-                </div>
-            </div>
-        </section>
-
-        <section id="propos" class="page">
-            <nav class="top-nav-right">
-                <div class="nav-sub-item" data-nav="accueil">Accueil</div>
-            </nav>
-            
-            <div class="tarot-layout">
-                <h1 class="page-title">Ma Démarche</h1>
-                <div class="bio-container">
-                    <div class="manifeste-box">
-                        <p class="quote">"Le Tarot n'est pas une réponse préfabriquée, c'est un langage codé. Je vous aide à en déchiffrer la structure pour transformer vos récits en actions concrètes."</p>
-                    </div>
-
-                    <div class="bio-text">
-                        <p>Bienvenue dans mon espace. Je m'appelle Emilie. Mon parcours a toujours été guidé par une double quête : lever le voile sur ce qui semble mystérieux et trouver la structure cachée derrière le chaos.</p>
-                        <p>Quand j'ai découvert le Tarot il y a quelques années, c'est d'abord l'intrigue des images qui m'a attirée. En y plongeant, j'ai réalisé qu'il s'agissait d'un outil d'une clarté redoutable. Loin d'une voyance floue ou de prédictions passives, le Tarot est pour moi l'outil de focalisation ultime. Il permet de faire un focus sur des situations précises, d'éclairer les grandes étapes de l'existence et de poser des mots justes sur ce que l'on traverse au quotidien.</p>
-                        <p>J'ai appris le Tarot d'une manière méthodique, vivante et structurée, ce qui m'a permis de mettre de la méthodologie dans mon propre récit et de me réapproprier les étapes de ma vie. C'est cette clarté que je veux vous transmettre aujourd'hui : poser un cadre pour que le sens puisse enfin s'exprimer.</p>
-                        <p>Dans mes ateliers, la structure logique des nombres et des arcanes sert de repère rassurant. Je vous transmets les clés de ce système pour que vous puissiez faire pleinement confiance à l'intuition unique qui surgit lors d'un tirage — cette connexion intime avec les images du Tarot et votre propre vécu, permettant de lier instantanément les cartes à votre réalité.</p>
-                        <p><strong>Ce que je vous propose :</strong><br>
-                        Des ateliers pratiques en petit comité (maximum 6 personnes). Un espace d'apprentissage pour manipuler l'outil en toute autonomie. Ensemble, nous ferons le focus sur vos étapes de vie, nous accueillerons les liens profonds que les cartes réveillent par rapport à votre vécu, et nous poserons un cadre solide pour que vous construisiez votre propre récit.</p>
-                    </div>
-
-                    <div class="bio-footer">
-                        <p><em>Prête à mêler logique et expérience pour redonner de la clarté à votre histoire ? Rejoignez-moi pour le prochain atelier de septembre.</em></p>
-                        <button class="btn-tirage" data-nav="contact" style="margin-top: 20px;">Réserver ma place</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="page">
-            <nav class="top-nav-right">
-                <div class="nav-sub-item" data-nav="accueil">Accueil</div>
-            </nav>
-            <div class="tarot-layout">
-                <h1 class="page-title">Réserver une place ou poser une question</h1>
-                <div class="contact-container">
-                    <p class="contact-intro">Les ateliers de septembre sont limités à <strong>6 personnes</strong>. Remplissez ce formulaire pour bloquer votre place.</p>
-                    <!-- ⚠️ À FAIRE : remplace TON_ID_FORMSPREE par ton vrai ID Formspree (créer un compte gratuit sur formspree.io, créer un formulaire, copier l'ID fourni dans l'URL d'action) -->
-                    <form action="https://formspree.io/f/TON_ID_FORMSPREE" method="POST" class="contact-form">
-                        <div class="form-group">
-                            <label for="name">Votre nom / prénom :</label>
-                            <input type="text" id="name" name="name" required placeholder="Ex: Marie Durant">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Votre adresse e-mail :</label>
-                            <input type="email" id="email" name="_replyto" required placeholder="Ex: marie@email.com">
-                        </div>
-                        <div class="form-group">
-                            <label for="object">Votre demande :</label>
-                            <select id="object" name="object" required>
-                                <option value="seance-decouverte">Séance Découverte — 30 min / 30 €</option>
-                                <option value="seance-profil">Lecture de profil — 75 min / 80 €</option>
-                                <option value="seance-parcours">Parcours 3 séances — 200 €</option>
-                                <option value="reservation">Atelier — réserver ma place</option>
-                                <option value="question">Une question</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Votre message :</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                        </div>
-                        <input type="text" name="_gotcha" style="display:none">
-                        <button type="submit" class="btn-tirage">Envoyer ma demande</button>
-                    </form>
-                </div>
+                <h1 class="page-title">Les Arcanes Mineures</h1>
+                <div id="mineurs-container"></div>
             </div>
         </section>
 
@@ -249,6 +110,16 @@
                 <div id="tirage-container"></div>
                 <div id="tirage-interpretation">Clique sur le bouton pour interroger les cartes...</div>
                 <button id="btn-tirage" class="btn-tirage">Mélanger et Tirer</button>
+            </div>
+        </section>
+
+        <section id="quiz" class="page">
+            <nav class="top-nav-right"><div class="nav-sub-item" data-nav="accueil">Accueil</div></nav>
+            <div class="tarot-layout">
+                <h1 class="page-title">Le Grand Quiz</h1>
+                <div id="quiz-container" class="quiz-box"></div>
+                <div id="quiz-result" style="display:none; text-align:center; margin: 30px 0;"></div>
+                <button id="btn-submit-quiz" class="btn-tirage">Vérifier</button>
             </div>
         </section>
 
@@ -270,8 +141,36 @@
             </div>
         </div>
     </main>
+    </div>
 
 <script>
+/* --- PROTECTION PAR MOT DE PASSE ---
+   ⚠️ Ceci n'est PAS une vraie sécurité (le mot de passe est visible dans le code source),
+   c'est juste un filtre pour décourager le partage occasionnel du lien.
+   Pour protéger un cours payant sérieusement, une plateforme dédiée (Podia, Teachable, etc.) reste plus sûre. */
+const ATELIER_PASSWORD = "CHANGE-MOI"; // <-- remplace par ton mot de passe
+
+function checkGate() {
+    if (sessionStorage.getItem('atelier_ok') === '1') {
+        document.getElementById('gate').style.display = 'none';
+        document.getElementById('app-content').style.display = 'block';
+    }
+}
+checkGate();
+
+document.getElementById('gate-submit').addEventListener('click', () => {
+    const val = document.getElementById('gate-password').value;
+    if (val === ATELIER_PASSWORD) {
+        sessionStorage.setItem('atelier_ok', '1');
+        checkGate();
+    } else {
+        document.getElementById('gate-error').innerText = "Mot de passe incorrect.";
+    }
+});
+document.getElementById('gate-password').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') document.getElementById('gate-submit').click();
+});
+
 const ARCANES_MAJ = [
     { nom: "Le Mat", img: "0fou.jpeg", mot: "l'Inconnu", sens: "Un saut dans l'inconnu, la liberté totale et l'élan spontané." },
     { nom: "Le Bateleur", img: "1bateleur.jpeg", mot: "l'Initiative", sens: "Le début d'un cycle, tu as tous les outils pour réussir." },
